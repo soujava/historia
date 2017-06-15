@@ -6,11 +6,22 @@ jQuery(document).ready(function($){
 	hideBlocks(timelineBlocks, offset);
 
 	// on scolling, show/animate timeline blocks when enter the viewport
-	$(window).on('scroll', function(){
-		(!window.requestAnimationFrame) 
+	$(window).on('scroll', function() {		
+		st = $(this).scrollTop();
+		if (st < lastScrollTop) {
+		    (!window.requestAnimationFrame) 
+			? setTimeout(function(){ hideBlocks(timelineBlocks, offset); }, 300)
+			: window.requestAnimationFrame(function(){ showBlocks(timelineBlocks, offset); });
+		}
+		else {
+		    (!window.requestAnimationFrame) 
 			? setTimeout(function(){ showBlocks(timelineBlocks, offset); }, 300)
 			: window.requestAnimationFrame(function(){ showBlocks(timelineBlocks, offset); });
+		}
+		lastScrollTop = st;		
 	});
+	
+	
 
 	function hideBlocks(blocks, offset) {
 		blocks.each(function(){
