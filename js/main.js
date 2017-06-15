@@ -6,6 +6,7 @@ jQuery(document).ready(function($){
 	hideBlocks(timelineBlocks, offset);
 
 	// on scolling, show/animate timeline blocks when enter the viewport
+	var lastScrollTop = 0;
 	$(window).on('scroll', function() {		
 		st = $(this).scrollTop();
 		if (st < lastScrollTop) {
