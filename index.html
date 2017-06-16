@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en" class="no-js">
+<html lang="pt-br" class="no-js">
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
@@ -8,14 +8,38 @@
 
 	<link rel="stylesheet" href="css/reset.css"> <!-- CSS reset -->
 	<link rel="stylesheet" href="css/style.css"> <!-- Resource style -->
+	<link rel="stylesheet" href="css/animate.min.css"> <!-- Animate.CSS -->
+
 	<script src="js/modernizr.js"></script> <!-- Modernizr -->
-  	
+
 	<title>A história do SouJava</title>
+
 </head>
 <body>
 	<header>
 		<h1>História do SouJava</h1>
 	</header>
+
+	<section class="cd-section">
+		<p>
+			Fatos, fotos, e uma história resumida de como surgiu a Sociedade de Usuários Java Brasileira através do tempo
+		</p>
+
+		<div class="cd-modal-action">
+			<a href="#0" class="btn" data-type="modal-trigger">+ sobre o SouJava</a>
+			<span class="cd-modal-bg"></span>
+		</div> <!-- cd-modal-action -->
+
+		<div class="cd-modal">
+			<div class="cd-modal-content">
+				<p>
+					O SouJava é um grupo de usuários, formado por desenvolvedores e evangelistas da tecnologia Java no Brasil, e tem como objetivo fortalecer, expandir e profissionalizar o uso de Java no país. O SouJava é um dos mais ativos e importantes grupos de usuários do mundo, e realiza diversas atividades no Brasil, e ajuda na organização do movimento Java mundial. O SouJava mantém reuniões presenciais, eventos e uma presença online, ajudando a comunidade Java brasileira a aplicar a tecnologia Java em projetos reais.
+				</p>
+			</div> <!-- cd-modal-content -->
+		</div> <!-- cd-modal -->
+
+		<a href="#0" class="cd-modal-close">Fechar</a>
+	</section> <!-- .cd-section -->
 
 	<section id="cd-timeline" class="cd-container">
 		<div class="cd-timeline-block">
@@ -26,7 +50,21 @@
 			<div class="cd-timeline-content">
 				<h2>Fundação do SouJava</h2>
 				<p>SouJava é fundado por um grupo de participantes do programa Internet Associate Program da Sun Micro Systems</p>
-				<a href="#0" class="cd-read-more">Leia mais</a>
+				<a id="demo01" href="#animatedModal" class="cd-read-more">Leia mais</a>
+				
+				<!--DEMO01-->
+				<div id="animatedModal">
+					<!--THIS IS IMPORTANT! to close the modal, the class name has to match the name given on the ID  class="close-animatedModal" -->
+					<div id="btn-close-modal" class="close-animatedModal"> 
+						FECHAR
+					</div>
+						
+					<div class="modal-content">
+							O SouJava é fundado por um grupo de participantes do programa Internet Associate Program da Sun Micro Systems
+					</div>
+				</div>	
+					
+				
 				<span class="cd-date">Janeiro 1998</span>
 			</div> <!-- cd-timeline-content -->
 		</div> <!-- cd-timeline-block -->
@@ -467,7 +505,31 @@ Roger Brinkley, Tom Marble, Bruno Souza, Ray Gans, Rich Sands, Vinicius Senger, 
 			
 			
 	</section> <!-- cd-timeline -->
-<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
-<script src="js/main.js"></script> <!-- Resource jQuery -->
+	<script src="js/jquery-2.1.1.js"></script>
+	<script src="js/animatedModal.min.js"></script>
+	<script src="js/velocity.min.js"></script>
+	<script src="js/main.js"></script> <!-- Resource jQuery -->
+	
+	<script>
+		$("#demo01").animatedModal({
+                modalTarget:'animatedModal',
+                animatedIn:'lightSpeedIn',
+                animatedOut:'bounceOutDown',
+                color:'#3498db',
+                // Callbacks
+                beforeOpen: function() {
+                    console.log("The animation was called");
+                },           
+                afterOpen: function() {
+                    console.log("The animation is completed");
+                }, 
+                beforeClose: function() {
+                    console.log("The animation was called");
+                }, 
+                afterClose: function() {
+                    console.log("The animation is completed");
+                }
+            });
+	</script>
 </body>
 </html>

@@ -3,12 +3,6 @@
 Primary style
 
 -------------------------------- */
-*, *::after, *::before {
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
-  box-sizing: border-box;
-}
-
 html * {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -25,10 +19,6 @@ body {
   font-family: "Droid Serif", serif;
   color: #7f8c97;
   background-color: #e9f0f5;
-}
-body.overflow-hidden {
-  /* used when modal is visible */
-  overflow: hidden;
 }
 
 a {
