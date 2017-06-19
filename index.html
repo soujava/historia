@@ -30,7 +30,7 @@
 			<span class="cd-modal-bg"></span>
 		</div> <!-- cd-modal-action -->
 
-		<div id="about_soujava"class="cd-modal">
+		<div id="about_soujava" class="cd-modal">
 			<div class="cd-modal-content">
 				<p>
 					O SouJava é um grupo de usuários, formado por desenvolvedores e evangelistas da tecnologia Java no Brasil, e tem como objetivo fortalecer, expandir e profissionalizar o uso de Java no país. </br></br> 
@@ -547,7 +547,7 @@ Roger Brinkley, Tom Marble, Bruno Souza, Ray Gans, Rich Sands, Vinicius Senger, 
 			name:'Messages', 
 			path:'bundle/', 
 			mode:'both',
-			language:'pt_BR',
+			/*language:'pt_BR',*/
 			async: true,
 			callback: function() {
 				// We specified mode: 'both' so translated values will be
@@ -565,9 +565,9 @@ Roger Brinkley, Tom Marble, Bruno Souza, Ray Gans, Rich Sands, Vinicius Senger, 
 				// Accessing a value with placeholders through a JS function
 				//alert(msg_complex('John'));
 
-				$("#about_soujava.cd-modal-content").text($.i18n.prop('about_soujava'));
-
 				$("#header_history_soujava").text($.i18n.prop('header_history_soujava'));
+				console.log($("#about_soujava"));
+				$("#about_soujava").child(".cd-modal").child(".cd-modal-content").text($.i18n.prop('about_soujava'));				
 			}
 		});
 
