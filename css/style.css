@@ -82,15 +82,15 @@ Main components
 -------------------------------- */
 
 header {
-  height: 200px;
-  line-height: 200px;
+  height: 150px;
+  line-height: 150px;
   text-align: center;
   background: #303e49;
 }
 
 header h1 {
   color: white;
-  font-size: 18px;
+  font-size: 16px;
   font-size: 1.125rem;
 }
 
@@ -553,7 +553,7 @@ header {
 }
 
 header h1 {
-  font-size: 2.4rem;
+  font-size: 2.2rem;
   text-align: center;
 }
 
@@ -563,7 +563,7 @@ header h1 {
     line-height: 240px;
   }
   header h1 {
-    font-size: 3.2rem;
+    font-size: 3.0rem;
     font-weight: 300;
   }
 }
@@ -593,7 +593,7 @@ header h1 {
     padding: 4em 10%;
   }
   .cd-section p {
-    font-size: 1.8rem;
+    font-size: 1.6rem;
     line-height: 2;
   }
 }
