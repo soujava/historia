@@ -574,6 +574,12 @@ header h1 {
   background-color: #03bb91;
 }
 
+.cd-section-footer {
+  padding: 2em 5%;
+  text-align: center;
+  background-color: #34383c;
+}
+
 .cd-section p {
   margin: 2em 0;
   line-height: 1.6;
