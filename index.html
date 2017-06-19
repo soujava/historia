@@ -95,7 +95,7 @@
 				<!--readMoreSection-->
 				<div id="animatedModal2">
 					<!--THIS IS IMPORTANT! to close the modal, the class name has to match the name given on the ID  class="close-animatedModal" -->
-					<div id="btn-close-modal" class="close-animatedModal"> 
+					<div id="btn-close-modal" class="close-animatedModal2"> 
 						<img src="img/cd-icon-close.svg" alt="Fechar">
 					</div>
 						
@@ -559,41 +559,15 @@ Roger Brinkley, Tom Marble, Bruno Souza, Ray Gans, Rich Sands, Vinicius Senger, 
         });
 		$("#readMoreSection2").animatedModal({
                 modalTarget:'animatedModal2',
-                animatedIn:'bounceIn',
+                animatedIn:'lightSpeedIn',
                 animatedOut:'bounceOutDown',
-                color:'#464A45',
-                // Callbacks
-                beforeOpen: function() {
-                    //console.log("The animation was called");
-                },           
-                afterOpen: function() {
-                    //console.log("The animation is completed");
-                }, 
-                beforeClose: function() {
-                    //console.log("The animation was called");
-                }, 
-                afterClose: function() {
-                    //console.log("The animation is completed");
-                }
+                color:'#464A45'
         });	
 		$("#readMoreSection3").animatedModal({
                 modalTarget:'animatedModal',
                 animatedIn:'zoomIn',
                 animatedOut:'bounceOut',
-                color:'#464A45',
-                // Callbacks
-                beforeOpen: function() {
-                    //console.log("The animation was called");
-                },           
-                afterOpen: function() {
-                    //console.log("The animation is completed");
-                }, 
-                beforeClose: function() {
-                    //console.log("The animation was called");
-                }, 
-                afterClose: function() {
-                    //console.log("The animation is completed");
-                }
+                color:'#464A45'
         });		
 	</script>	
 </body>

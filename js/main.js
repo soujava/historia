@@ -116,5 +116,8 @@ jQuery(document).ready(function($){
 
 		var closeAnimatedModal = $('.close-animatedModal');
 		closeAnimatedModal.click();
+
+		var closeAnimatedModal2 = $('.close-animatedModal2');
+		closeAnimatedModal2.click();
 	}
 });
