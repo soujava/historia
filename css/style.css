@@ -553,14 +553,14 @@ header {
 }
 
 header h1 {
-  font-size: 2.2rem;
+  font-size: 1.2rem;
   text-align: center;
 }
 
 @media only screen and (min-width: 1170px) {
   header {
-    height: 240px;
-    line-height: 240px;
+    height: 140px;
+    line-height: 140px;
   }
   header h1 {
     font-size: 3.0rem;
@@ -590,7 +590,7 @@ header h1 {
 
 @media only screen and (min-width: 768px) {
   .cd-section {
-    padding: 4em 10%;
+    padding: 2em 10%;
   }
   .cd-section p {
     font-size: 1.6rem;

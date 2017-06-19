@@ -10,14 +10,14 @@
 	<link rel="stylesheet" href="css/style.css"> <!-- Resource style -->
 	<link rel="stylesheet" href="css/animate.min.css"> <!-- Animate.CSS -->
 
-	<script src="js/modernizr.js"></script> <!-- Modernizr -->
+	<script src="js/modernizr.js"></script> <!-- Modernizr -->	
 
 	<title>A história do SouJava</title>
 
 </head>
 <body>
 	<header>
-		<h1>História do SouJava</h1>
+		<h1 id="header_history_soujava">História do SouJava</h1>
 	</header>
 
 	<section class="cd-section">
@@ -30,7 +30,7 @@
 			<span class="cd-modal-bg"></span>
 		</div> <!-- cd-modal-action -->
 
-		<div class="cd-modal">
+		<div id="about_soujava"class="cd-modal">
 			<div class="cd-modal-content">
 				<p>
 					O SouJava é um grupo de usuários, formado por desenvolvedores e evangelistas da tecnologia Java no Brasil, e tem como objetivo fortalecer, expandir e profissionalizar o uso de Java no país. </br></br> 
@@ -529,15 +529,48 @@ Roger Brinkley, Tom Marble, Bruno Souza, Ray Gans, Rich Sands, Vinicius Senger, 
 	</section> <!-- cd-timeline -->
 
 	<section class="cd-section-footer">
-		Feito com <img src="img/cd-icon-heart.png" height="20px" width="20px" alt="Amor"> e muitooo código <a href="https://github.com/soujava/historia" target="_blank">opensource</a> de membros do SouJava Brasil.
+		Feito com <img src="img/cd-icon-heart.png" height="20px" width="20px" alt="Muito Amor!"> e muitooo código <a href="https://github.com/soujava/historia" target="_blank">opensource</a> de membros do SouJava Brasil.
 	</section><!-- cd-section-footer -->
 
 	<script src="js/jquery-2.1.1.js"></script>
+	<script src="js/jquery.i18n.properties-min.js"></script> <!-- i18n Translation -->
 	<script src="js/animatedModal.min.js"></script>
 	<script src="js/velocity.min.js"></script>
 	<script src="js/main.js"></script> <!-- Resource jQuery -->
 	
+	
 	<script>
+		// This will initialize the plugin 
+		// and show two dialog boxes: one with the text "Olá World"
+		// and other with the text "Good morning John!" 
+		$.i18n.properties({
+			name:'Messages', 
+			path:'bundle/', 
+			mode:'both',
+			language:'pt_BR',
+			async: true,
+			callback: function() {
+				// We specified mode: 'both' so translated values will be
+				// available as JS vars/functions and as a map
+
+				// Accessing a simple value through the map
+				$.i18n.prop('msg_hello');
+				
+				// Accessing a value with placeholders through the map
+				$.i18n.prop('msg_complex', 'John');
+
+				// Accessing a simple value through a JS variable
+				//alert(msg_hello + ' ' + msg_world);
+				
+				// Accessing a value with placeholders through a JS function
+				//alert(msg_complex('John'));
+
+				$("#about_soujava.cd-modal-content").text($.i18n.prop('about_soujava'));
+
+				$("#header_history_soujava").text($.i18n.prop('header_history_soujava'));
+			}
+		});
+
 		$("#readMoreSection").animatedModal({
                 modalTarget:'animatedModal',
                 animatedIn:'lightSpeedIn',
@@ -568,7 +601,7 @@ Roger Brinkley, Tom Marble, Bruno Souza, Ray Gans, Rich Sands, Vinicius Senger, 
                 animatedIn:'zoomIn',
                 animatedOut:'bounceOut',
                 color:'#400A45'
-        });		
+        });
 	</script>	
 </body>
 </html>
