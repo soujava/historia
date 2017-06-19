@@ -20,9 +20,7 @@ jQuery(document).ready(function($){
 			: window.requestAnimationFrame(function(){ showBlocks(timelineBlocks, offset); });
 		}
 		lastScrollTop = st;		
-	});
-	
-	
+	});	
 
 	function hideBlocks(blocks, offset) {
 		blocks.each(function(){
@@ -36,7 +34,7 @@ jQuery(document).ready(function($){
 		});
 	}
 
-	//trigger the animation - open modal window
+	// Triggers the animation - open modal window
 	$('[data-type="modal-trigger"]').on('click', function(){
 		var actionBtn = $(this),
 			scaleValue = retrieveScale(actionBtn.next('.cd-modal-bg'));
@@ -50,12 +48,13 @@ jQuery(document).ready(function($){
 		if(actionBtn.parents('.no-csstransitions').length > 0 ) animateLayer(actionBtn.next('.cd-modal-bg'), scaleValue, true);
 	});
 
-	//trigger the animation - close modal window
-	$('.cd-section .cd-modal-close').on('click', function(){
+	// Triggers the animation - close modal window
+	$('.cd-section .cd-modal-close').on('click', function () {
 		closeModal();
 	});
-	$(document).keyup(function(event){
-		if(event.which=='27') closeModal();
+
+	$(document).keyup(function (event) {
+		if (event.which == '27') closeModal();
 	});
 
 	$(window).on('resize', function(){
@@ -112,7 +111,10 @@ jQuery(document).ready(function($){
 		section.removeClass('modal-is-visible').one('webkitTransitionEnd otransitionend oTransitionEnd msTransitionEnd transitionend', function(){
 			animateLayer(section.find('.cd-modal-bg'), 1, false);
 		});
-		//if browser doesn't support transitions...
-		if(section.parents('.no-csstransitions').length > 0 ) animateLayer(section.find('.cd-modal-bg'), 1, false);
+		// if browser doesn't support transitions...
+		if (section.parents('.no-csstransitions').length > 0 ) animateLayer(section.find('.cd-modal-bg'), 1, false);
+
+		var closeAnimatedModal = $('.close-animatedModal');
+		closeAnimatedModal.click();
 	}
 });
