@@ -11,12 +11,12 @@ jQuery(document).ready(function($){
 		st = $(this).scrollTop();
 		if (st < lastScrollTop) {
 		    (!window.requestAnimationFrame) 
-			? setTimeout(function(){ hideBlocks(timelineBlocks, offset); }, 300)
-			: window.requestAnimationFrame(function(){ showBlocks(timelineBlocks, offset); });
+			? setTimeout(function(){ hideBlocks(timelineBlocks, offset); }, 400)
+			: window.requestAnimationFrame(function(){ hideBlocks(timelineBlocks, offset); });
 		}
 		else {
 		    (!window.requestAnimationFrame) 
-			? setTimeout(function(){ showBlocks(timelineBlocks, offset); }, 300)
+			? setTimeout(function(){ showBlocks(timelineBlocks, offset); }, 400)
 			: window.requestAnimationFrame(function(){ showBlocks(timelineBlocks, offset); });
 		}
 		lastScrollTop = st;		
